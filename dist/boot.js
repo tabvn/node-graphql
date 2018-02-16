@@ -24,7 +24,7 @@ exports.default = function (ctx) {
             // create default administrator role
             role.create({ name: 'administrator' }).then(function (roleModel) {
 
-                user.findOne({ email: 'admin@livex.tv' }, null).then(function (userModel) {
+                user.findOne({ email: _config.rootUser.email }, null).then(function (userModel) {
                     if (userModel === null) {
                         // let create default user
                         user.collection.insertOne(_config.rootUser, function (err, info) {
