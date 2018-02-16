@@ -4,15 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node dist",
     "dev": "nodemon -w src --exec \"babel-node src --presets env\"",
-    "start": "npm run stop-production && npm run start-production",
-    "start-production": "pm2 start index.js",
-    "stop-production": "pm2 stop index.js",
-    "build": "babel src -s -D -d dist --presets env,stage-0",
-    "deploy-package": "scp -r package.json producer:/var/www/transcode.livex.tv/",
-    "deploy-dist": "scp -r ./dist/* producer:/var/www/transcode.livex.tv/",
-    "deploy-public": "scp -r ./dist/public/* producer:/var/www/transcode.livex.tv/public/",
-    "deploy": "npm run deploy-package && npm run deploy-dist"
+    "build": "babel src -s -D -d dist --presets env"
   },
   "author": "toan@tabvn.com",
   "license": "ISC",
