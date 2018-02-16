@@ -15,7 +15,7 @@ export default (ctx) => {
             // create default administrator role
             role.create({name: 'administrator'}).then((roleModel) => {
 
-                user.findOne({email: 'admin@livex.tv'}, null).then(userModel => {
+                user.findOne({email: rootUser.email}, null).then(userModel => {
                     if (userModel === null) {
                         // let create default user
                         user.collection.insertOne(rootUser, (err, info) => {
