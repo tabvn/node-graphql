@@ -11,6 +11,8 @@ npm run dev
 
 ```
 
+* Graphiql Browse http://127.0.0.1/api?auth=TOKEN_ID 
+
 ## Deployment
  ```
  npm run build
