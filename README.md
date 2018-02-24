@@ -17,3 +17,6 @@ npm run dev
  ```
  npm run build
  ```
+## Video
+
+https://www.youtube.com/watch?v=0F8ujKCfZ2k
