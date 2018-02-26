@@ -55,7 +55,7 @@ npm run dev
 
 ## Hooks
 
-before_update(), after_update(), before_create(),after_create(), before_delete(), after_delete() ....
+beforeUpdate(), afterUpdate(), beforeCreate(),afterCreate(), beforeDelete(), afterDelete() ....
  
 ## Video
 
