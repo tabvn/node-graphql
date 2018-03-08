@@ -8,7 +8,7 @@ import Models from './models'
 import Schema from './schema'
 import Realtime from "./realtime"
 import WebSocketServer from 'uws'
-import {appPort,production} from "./config"
+import {appPort, production} from "./config"
 import boot from './boot'
 import _ from 'lodash'
 
@@ -46,16 +46,16 @@ app.ctx = ctx;
 const handleRequest = graphqlHTTP(async (request) => {
 
     let tokenId = request.header('authorization');
-    if(!tokenId){
+    if (!tokenId) {
         tokenId = _.get(request, 'query.auth', null);
     }
-
     request.ctx = ctx;
     let token = null;
     if (tokenId) {
         try {
-            token = await ctx.models.token.load(tokenId);
-        } catch (err) {
+            token = await ctx.models.token.jwtVerify(tokenId, true);
+        }
+        catch (err) {
             token = null;
         }
     }

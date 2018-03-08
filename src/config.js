@@ -1,4 +1,5 @@
 export const production = false; // change to true when deployment to server
+export const jwtSecret = 'tabvn'; // Json webtoken Secret key for encoding and decoding
 export const appPort = 3001;
 export const rootUser = {
     firstName: 'Admin',

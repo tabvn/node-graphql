@@ -359,7 +359,8 @@ export default class User extends Model {
 
                     return new Promise((resolve, reject) => {
 
-                        this.ctx.models.token.delete(_.get(args, 'token')).then(() => {
+                        const token = _.get(args, 'token');
+                        this.ctx.models.token.deleteToken(token).then(() => {
 
                             return resolve({
                                 success: true,
